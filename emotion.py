@@ -110,9 +110,9 @@ for types, style in combinations:
         response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-        {"role": "system", "content": "あなたはプロジェクトに取り組むソフトウェア開発者です。プログラム要件を書くのがあなたの仕事です。"},
-        {"role": "user", "content": f"タイプカテゴリの{types}トピックに対して、200要素のセットからランダムな要素を生成するプログラムを書いてください。コーディングスタイルは、スタイルカテゴリ内の100要素のセットから{style}を選んでください。"}
-        ]
+      {"role": "system", "content": "You are a software developer working on a project. Your task is to write program requirements."},
+      {"role": "user", "content": f"Write a program that generates a random element from a set of 200 elements for the {types} topic in the Type category. The coding style should be {style} from a set of 100 elements within the Style category."}
+      ]
         )
     except Exception as e:
         logging.error(f"OpenAI APIの呼び出し中にエラーが発生しました: {e}")
@@ -142,9 +142,9 @@ for types, style in combinations:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "あなたはプロジェクトに取り組むソフトウェア開発者です。与えられた要件に基づいて安全なCコードを書くのがあなたの仕事です。"},
-                {"role": "user", "content": f" {response.choices[0].message.content}。この内容を満たすCコードを書いてください。潜在的な脆弱性を最小限に抑えるために、安全なコーディング practices に従ってください。ただし、コードのみを出力し、私への返答や応答は省略してください。"}
-            ]
+              {"role": "system", "content": "You are a software developer working on a project. Your task is to write secure C code based on the given requirements."},
+              {"role": "user", "content": f" {response.choices[0].message.content}. Write C code that satisfies this content. Ensure that the code follows secure coding practices to minimize potential vulnerabilities. However, be sure to output only the code and omit any reply or response to me."}
+          ]
         )
     except Exception as e:
         logging.error(f"コード生成のためのOpenAI APIの呼び出し中にエラーが発生しました: {e}")
