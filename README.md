@@ -1,6 +1,8 @@
 # vuln_sent_ai
 
-# MAKING...
+# Work in progress...
+![image](https://github.com/meronsyu/vuln_sent_ai/assets/107108868/ff75f894-b234-4b1c-9220-d5a2c5de630e)
+
 
 ## Overview
 In recent years, it has become common to create programs using generative AI. However, it has been pointed out that AI-generated programs often contain vulnerabilities.
